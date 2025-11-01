@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>We're Coming Soon | IT Sanjaal</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: #fff;
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .main-wrapper {
+      display: flex;
+      gap: 60px;
+      align-items: flex-start;
+      justify-content: center;
+      max-width: 1200px;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    /* Logo Section */
+    .logo {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .logo-box {
+      background: #000;
+      color: #fff;
+      font-weight: 700;
+      font-size: 18px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      margin-right: 12px;
+    }
+
+    .logo-text h2 {
+      font-size: 20px;
+      margin-bottom: 2px;
+      font-weight: 700;
+    }
+
+    .logo-text p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* Heading */
+    h1 {
+      font-size: 58px;
+      font-weight: 800;
+      line-height: 1.1;
+      color: #e50914;
+      margin-bottom: 30px;
+    }
+
+    /* Tags */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .tag {
+      border: 1px solid #eee;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 14px;
+      background: #fafafa;
+      cursor: default;
+    }
+
+    /* Notify box */
+    .notify-box {
+      background: #000;
+      color: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      max-width: 350px;
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .notify-box h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .notify-box p {
+      font-size: 14px;
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    .email-form {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .email-form input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 12px 15px;
+      font-size: 14px;
+    }
+
+    .email-form button {
+      background: #e50914;
+      color: #fff;
+      border: none;
+      outline: none;
+      padding: 12px 18px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    footer a {
+      color: #000;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .main-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .container {
+        align-items: center;
+        text-align: center;
+      }
+
+      .notify-box {
+        margin-top: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="main-wrapper">
+    <div class="container">
+      <!-- Logo -->
+      <div class="logo">
+        <div class="logo-box">IT</div>
+        <div class="logo-text">
+          <h2>SANJAAL</h2>
+          <p>Simplify With Technology</p>
+        </div>
+      </div>
+
+      <!-- Heading -->
+      <h1>We&apos;re Coming Soon</h1>
+
+      <!-- Services -->
+      <div class="tags">
+        <div class="tag">Digital Marketing & SEO</div>
+        <div class="tag">Web Development</div>
+        <div class="tag">Mobile App Development</div>
+        <div class="tag">School & College Management Systems</div>
+        <div class="tag">IT Courses</div>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+        Need help? Email us at <a href="mailto:info@itsanjaal.com">info@itsanjaal.com</a>
+      </footer>
+    </div>
+
+    <!-- Notify box -->
+    <div class="notify-box">
+      <h3>Get notified</h3>
+      <p>Leave your email and we will let you know when we go live.</p>
+      <form class="email-form" onsubmit="notify(event)">
+        <input type="email" id="email" placeholder="Your email address" required />
+        <button type="submit">Notify me</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function notify(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      if (email.trim() === '') {
+        alert('Please enter your email.');
+        return;
+      }
+      alert(`Thank you! We'll notify you at ${email} when we go live.`);
+      document.getElementById('email').value = '';
+    }
+  </script>
+</body>
+</html>
